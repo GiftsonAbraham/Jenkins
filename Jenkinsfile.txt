@@ -12,8 +12,7 @@ pipeline {
                     sh """
                         ssh -o StrictHostKeyChecking=no ec2-user@43.203.122.34 mkdir -p /var/www/html
                         scp -r ./* ec2-user@43.203.122.34:/tmp
-                        sudo cp /tmp/index.html /var/www/html
-                        sudo cp /tmp/styles.css /var/www/html
+                        sleep 300
                     """
                 }
             }
