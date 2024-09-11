@@ -11,7 +11,7 @@ pipeline {
                 sshagent(['8199a860-19e5-4960-b7e4-39b49075f8ad']) {
                     sh """
                         ssh -o StrictHostKeyChecking=no ec2-user@43.203.122.34 mkdir -p /var/www/html
-                        scp -r ./* ec2-user@43.203.122.34:/var/www/html
+                        sudo scp -r ./* ec2-user@43.203.122.34:/var/www/html
                     """
                 }
             }
